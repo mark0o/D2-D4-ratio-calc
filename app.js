@@ -165,14 +165,14 @@ function displayResultsWScroll(ratio) {
 
 // Determine ratio category
 function determineCategory(ratio) {
-  if (ratio < APP_DATA.typical_ratios.masculine_threshold) {
+  if (ratio <= 0.95) {
     return {
       name: "masculine",
       label: "Masculine Range",
       description:
         "Lower than average - typically associated with higher prenatal testosterone exposure",
     };
-  } else if (ratio <= APP_DATA.typical_ratios.feminine_threshold) {
+  } else if (ratio <= 1.0) {
     return {
       name: "average",
       label: "Average Range",

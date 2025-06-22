@@ -807,17 +807,19 @@ select.form-control {
 }
 
 .spectrum-section.masculine {
+  flex: 10;
   background: linear-gradient(135deg, #3b82f6, #1e40af);
   color: white;
 }
 
 .spectrum-section.average {
+  flex: 5;
   background: linear-gradient(135deg, #22c55e, #15803d);
   color: white;
 }
 
 .spectrum-section.feminine {
-  flex: 2;
+  flex: 15;
   background: linear-gradient(135deg, #ec4899, #be185d);
   color: white;
 }

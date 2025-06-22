@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D:4D Ratio Calculator - Digit Ratio Analysis</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>2D:4D Ratio Calculator</h1>
+        <p class="header__subtitle">
+          Educational finger digit ratio analysis tool
+        </p>
+      </header>
+
+      <main>
+        <!-- Calculator Section -->
+        <section class="calculator-section">
+          <div class="card">
+            <div class="card__header">
+              <h2>Finger Length Calculator</h2>
+            </div>
+            <div class="card__body">
+              <div class="measurement-inputs">
+                <div class="form-group">
+                  <label class="form-label" for="index-finger"
+                    >Index Finger Length (2D)</label
+                  >
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      id="index-finger"
+                      class="form-control"
+                      placeholder="Enter length (any unit)"
+                      step="0.1"
+                      min="0"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="ring-finger"
+                    >Ring Finger Length (4D)</label
+                  >
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      id="ring-finger"
+                      class="form-control"
+                      placeholder="Enter length (any unit)"
+                      step="0.1"
+                      min="0"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <button
+                id="calculate-btn"
+                class="btn btn--primary btn--full-width"
+              >
+                Calculate Ratio
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Results Section -->
+        <section
+          class="results-section"
+          id="results-section"
+          style="display: none"
+        >
+          <div class="card">
+            <div class="card__body">
+              <div class="ratio-display">
+                <h3>Your 2D:4D Ratio</h3>
+                <div class="ratio-value" id="ratio-value">0.000</div>
+                <div class="ratio-category" id="ratio-category"></div>
+              </div>
+
+              <div class="ratio-spectrum">
+                <div class="spectrum-bar">
+                  <div class="spectrum-section masculine">
+                    Masculine<br />&lt; 0.95
+                  </div>
+                  <div class="spectrum-section average">
+                    Average<br />0.95 - 1.0
+                  </div>
+                  <div class="spectrum-section feminine">
+                    Feminine<br />&gt; 1.0
+                  </div>
+                </div>
+                <div class="ratio-indicator" id="ratio-indicator"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Educational Section -->
+        <section class="education-section">
+          <div class="card">
+            <div class="card__header">
+              <h3>What Does This Mean?</h3>
+            </div>
+            <div class="card__body">
+              <div class="important-disclaimer">
+                <h4>⚠️ Important Disclaimer</h4>
+                <p>
+                  <strong>This is NOT a medical diagnostic tool.</strong> The
+                  2D:4D ratio reflects prenatal hormone exposure during fetal
+                  development, not your current hormone levels. This tool is for
+                  educational purposes only.
+                </p>
+              </div>
+
+              <div class="scientific-facts">
+                <h4>Key Scientific Facts</h4>
+                <ul id="scientific-facts-list">
+                  <li>
+                    2D:4D ratio reflects
+                    <span class="tooltip"
+                      >prenatal<span class="tooltiptext"
+                        >Hormone concentrations during pregnancy supporting
+                        fetal and maternal health.<br />
+                        <a
+                          class="tooltip-link"
+                          href="https://www.perplexity.ai/search/what-s-prenatal-hormone-exposu-8t1S978.Th.y4_PHfuGX_w"
+                          >learn more</a
+                        ></span
+                      ></span
+                    >
+                    hormone exposure, not current levels
+                  </li>
+                  <li>
+                    Ratio is established during fetal development and remains
+                    constant
+                  </li>
+                  <li>
+                    Lower ratios (shorter index finger) indicate higher prenatal
+                    testosterone
+                  </li>
+                  <li>
+                    Higher ratios (longer index finger) indicate lower prenatal
+                    testosterone
+                  </li>
+                  <li>
+                    No reliable correlation exists between 2D:4D and adult
+                    hormone levels
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reference Information -->
+        <section class="reference-section">
+          <div class="card">
+            <div class="card__header">
+              <h3>Typical Hormone Ranges</h3>
+            </div>
+            <div class="card__body">
+              <div class="reference-disclaimer">
+                <p>
+                  <strong
+                    >Reference Only - NOT derived from your finger ratio</strong
+                  >
+                </p>
+                <p>
+                  These are typical adult hormone ranges. Actual hormone levels
+                  can only be determined through blood tests.
+                </p>
+              </div>
+
+              <div class="hormone-tables">
+                <div class="hormone-table">
+                  <h4>Testosterone Levels</h4>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Gender</th>
+                        <th>Range (ng/dL)</th>
+                        <th>Typical (ng/dL)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Male</td>
+                        <td>300 - 1000</td>
+                        <td>450 - 600</td>
+                      </tr>
+                      <tr>
+                        <td>Female</td>
+                        <td>15 - 70</td>
+                        <td>20 - 40</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="hormone-table">
+                  <h4>Estradiol Levels</h4>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Gender</th>
+                        <th>Range (pg/mL)</th>
+                        <th>Typical (pg/mL)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Male</td>
+                        <td>13 - 42</td>
+                        <td>20 - 35</td>
+                      </tr>
+                      <tr>
+                        <td>Female</td>
+                        <td>60 - 450</td>
+                        <td>100 - 250</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Measurement Guide -->
+        <section class="measurement-guide">
+          <div class="card">
+            <div class="card__header">
+              <h3>How to Measure Your Fingers</h3>
+            </div>
+            <div class="card__body">
+              <div class="measurement-steps">
+                <h4>Step-by-Step Instructions</h4>
+                <ol>
+                  <li>
+                    <strong>Use your right hand</strong> - Right hand ratios may
+                    be more sensitive to prenatal hormones
+                  </li>
+                  <li>
+                    <strong>Measure from palm side</strong> - From fingertip to
+                    the midpoint of the bottom crease
+                  </li>
+                  <li>
+                    <strong>Use precise units</strong> - Millimeters or inches
+                    provide better accuracy
+                  </li>
+                  <li>
+                    <strong>Take multiple measurements</strong> - Measure
+                    several times for consistency
+                  </li>
+                  <li>
+                    <strong>Keep fingers straight</strong> - Ensure fingers are
+                    fully extended during measurement
+                  </li>
+                </ol>
+              </div>
+
+              <div class="measurement-tips">
+                <h4>Tips for Accurate Measurement</h4>
+                <ul id="measurement-tips-list">
+                  <li>
+                    Measure from palm-side finger tip to midpoint of bottom
+                    crease
+                  </li>
+                  <li>Use millimeters or inches for accuracy</li>
+                  <li>Take measurements multiple times for consistency</li>
+                  <li>
+                    Right hand ratios may be more sensitive to prenatal hormones
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Final Disclaimer -->
+        <section class="final-disclaimer">
+          <div class="card">
+            <div class="card__body">
+              <div class="medical-disclaimer">
+                <h4>Medical Disclaimer</h4>
+                <p>
+                  This calculator is for educational and research purposes only.
+                  It is not intended to diagnose, treat, cure, or prevent any
+                  disease or medical condition. The 2D:4D ratio is a measure of
+                  prenatal hormone exposure and does not reliably predict
+                  current hormone levels. For accurate hormone testing and
+                  medical advice, please consult with a qualified healthcare
+                  professional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
